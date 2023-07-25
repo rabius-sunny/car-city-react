@@ -30,6 +30,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["body-parser", "npm:1.20.2"],\
             ["cors", "npm:2.8.5"],\
+            ["dotenv", "npm:16.3.1"],\
             ["express", "npm:4.18.2"],\
             ["jsonwebtoken", "npm:9.0.1"],\
             ["mongoose", "npm:7.4.1"],\
@@ -398,6 +399,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["car-city-backend", "workspace:."],\
             ["body-parser", "npm:1.20.2"],\
             ["cors", "npm:2.8.5"],\
+            ["dotenv", "npm:16.3.1"],\
             ["express", "npm:4.18.2"],\
             ["jsonwebtoken", "npm:9.0.1"],\
             ["mongoose", "npm:7.4.1"],\
@@ -635,6 +637,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/destroy-npm-1.2.0-6a511802e2-0acb300b74.zip/node_modules/destroy/",\
           "packageDependencies": [\
             ["destroy", "npm:1.2.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["dotenv", [\
+        ["npm:16.3.1", {\
+          "packageLocation": "./.yarn/cache/dotenv-npm-16.3.1-e6d380a398-15d75e7279.zip/node_modules/dotenv/",\
+          "packageDependencies": [\
+            ["dotenv", "npm:16.3.1"]\
           ],\
           "linkType": "HARD"\
         }]\
