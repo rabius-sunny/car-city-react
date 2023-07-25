@@ -1,0 +1,22 @@
+// Padding
+$spacing-properties: (p: padding,
+  pt: padding-top,
+  pb: padding-bottom,
+  ps: padding-left,
+  pe: padding-right,
+  m: margin,
+  mt: padding-top,
+  mb: padding-bottom,
+  ms: padding-left,
+  me: padding-right);
+
+@each $key,
+$value in $spacing-properties {
+  @for $i from 1 through 10 {
+    $spacing-value: $i * 10px;
+
+    .#{$key}-#{$i} {
+      #{$value}: $spacing-value;
+    }
+  }
+}
