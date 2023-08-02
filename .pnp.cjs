@@ -35,6 +35,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@mantine/core", "virtual:a12c02f742eb32437557b380c3cdec602b2fd6968e6be04212f24c9acaefc702341cd1cd811adbd2b89262ff16f2dc364ac7883990e68cfdd32ba665e5a7e41d#npm:6.0.16"],\
             ["@mantine/hooks", "virtual:a12c02f742eb32437557b380c3cdec602b2fd6968e6be04212f24c9acaefc702341cd1cd811adbd2b89262ff16f2dc364ac7883990e68cfdd32ba665e5a7e41d#npm:6.0.16"],\
             ["@reduxjs/toolkit", "virtual:a12c02f742eb32437557b380c3cdec602b2fd6968e6be04212f24c9acaefc702341cd1cd811adbd2b89262ff16f2dc364ac7883990e68cfdd32ba665e5a7e41d#npm:1.9.5"],\
+            ["@tabler/icons-react", "virtual:a12c02f742eb32437557b380c3cdec602b2fd6968e6be04212f24c9acaefc702341cd1cd811adbd2b89262ff16f2dc364ac7883990e68cfdd32ba665e5a7e41d#npm:2.29.0"],\
             ["@testing-library/jest-dom", "npm:5.16.5"],\
             ["@testing-library/react", "virtual:a12c02f742eb32437557b380c3cdec602b2fd6968e6be04212f24c9acaefc702341cd1cd811adbd2b89262ff16f2dc364ac7883990e68cfdd32ba665e5a7e41d#npm:13.4.0"],\
             ["@testing-library/user-event", "virtual:a12c02f742eb32437557b380c3cdec602b2fd6968e6be04212f24c9acaefc702341cd1cd811adbd2b89262ff16f2dc364ac7883990e68cfdd32ba665e5a7e41d#npm:13.5.0"],\
@@ -5111,6 +5112,39 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["@tabler/icons", [\
+        ["npm:2.29.0", {\
+          "packageLocation": "./.yarn/cache/@tabler-icons-npm-2.29.0-af0c69375e-c11f8837c3.zip/node_modules/@tabler/icons/",\
+          "packageDependencies": [\
+            ["@tabler/icons", "npm:2.29.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@tabler/icons-react", [\
+        ["npm:2.29.0", {\
+          "packageLocation": "./.yarn/cache/@tabler-icons-react-npm-2.29.0-2d47cff386-6d92ca50d8.zip/node_modules/@tabler/icons-react/",\
+          "packageDependencies": [\
+            ["@tabler/icons-react", "npm:2.29.0"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:a12c02f742eb32437557b380c3cdec602b2fd6968e6be04212f24c9acaefc702341cd1cd811adbd2b89262ff16f2dc364ac7883990e68cfdd32ba665e5a7e41d#npm:2.29.0", {\
+          "packageLocation": "./.yarn/__virtual__/@tabler-icons-react-virtual-d8e2e87dd7/0/cache/@tabler-icons-react-npm-2.29.0-2d47cff386-6d92ca50d8.zip/node_modules/@tabler/icons-react/",\
+          "packageDependencies": [\
+            ["@tabler/icons-react", "virtual:a12c02f742eb32437557b380c3cdec602b2fd6968e6be04212f24c9acaefc702341cd1cd811adbd2b89262ff16f2dc364ac7883990e68cfdd32ba665e5a7e41d#npm:2.29.0"],\
+            ["@tabler/icons", "npm:2.29.0"],\
+            ["@types/react", "npm:18.2.14"],\
+            ["prop-types", "npm:15.8.1"],\
+            ["react", "npm:18.2.0"]\
+          ],\
+          "packagePeers": [\
+            "@types/react",\
+            "react"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["@testing-library/dom", [\
         ["npm:8.20.1", {\
           "packageLocation": "./.yarn/cache/@testing-library-dom-npm-8.20.1-453580d160-06fc8dc678.zip/node_modules/@testing-library/dom/",\
@@ -7640,6 +7674,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@mantine/core", "virtual:a12c02f742eb32437557b380c3cdec602b2fd6968e6be04212f24c9acaefc702341cd1cd811adbd2b89262ff16f2dc364ac7883990e68cfdd32ba665e5a7e41d#npm:6.0.16"],\
             ["@mantine/hooks", "virtual:a12c02f742eb32437557b380c3cdec602b2fd6968e6be04212f24c9acaefc702341cd1cd811adbd2b89262ff16f2dc364ac7883990e68cfdd32ba665e5a7e41d#npm:6.0.16"],\
             ["@reduxjs/toolkit", "virtual:a12c02f742eb32437557b380c3cdec602b2fd6968e6be04212f24c9acaefc702341cd1cd811adbd2b89262ff16f2dc364ac7883990e68cfdd32ba665e5a7e41d#npm:1.9.5"],\
+            ["@tabler/icons-react", "virtual:a12c02f742eb32437557b380c3cdec602b2fd6968e6be04212f24c9acaefc702341cd1cd811adbd2b89262ff16f2dc364ac7883990e68cfdd32ba665e5a7e41d#npm:2.29.0"],\
             ["@testing-library/jest-dom", "npm:5.16.5"],\
             ["@testing-library/react", "virtual:a12c02f742eb32437557b380c3cdec602b2fd6968e6be04212f24c9acaefc702341cd1cd811adbd2b89262ff16f2dc364ac7883990e68cfdd32ba665e5a7e41d#npm:13.4.0"],\
             ["@testing-library/user-event", "virtual:a12c02f742eb32437557b380c3cdec602b2fd6968e6be04212f24c9acaefc702341cd1cd811adbd2b89262ff16f2dc364ac7883990e68cfdd32ba665e5a7e41d#npm:13.5.0"],\

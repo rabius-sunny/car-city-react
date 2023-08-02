@@ -9,19 +9,21 @@ module.exports = {
   },
   extends: [
     'eslint:recommended',
-    'plugin:react/recommended',
-    'plugin:@typescript-eslint/recommended',
     'plugin:jsx-a11y/recommended',
     'plugin:prettier/recommended',
     'plugin:react-hooks/recommended',
   ],
-  plugins: ['@typescript-eslint', 'react', 'jsx-a11y', 'prettier', 'react-hooks'],
+  plugins: ['@typescript-eslint', 'jsx-a11y', 'prettier', 'react-hooks'],
   rules: {
-    "react/react-in-jsx-scope": "off"
+    "react/react-in-jsx-scope": "off",
+    "semi": "off"
   },
   settings: {
     react: {
       version: 'detect'
     }
+  },
+  env: {
+    browser: true
   }
 };

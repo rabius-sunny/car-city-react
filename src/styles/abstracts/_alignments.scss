@@ -1,0 +1,23 @@
+$justifyContentMap: ('justify-between': space-between,
+  'justify-evenly': space-evenly,
+  'justify-around': space-around,
+  'justify-start': flex-start,
+  'justify-end': flex-end);
+
+@each $classname,
+$justifyContentValue in $justifyContentMap {
+  .#{$classname} {
+    justify-content: $justifyContentValue;
+  }
+}
+
+$alignItemsMap: ('items-center': center,
+  'items-baseline': baseline,
+  'items-stretch': stretch);
+
+@each $classname,
+$alignItemsValue in $alignItemsMap {
+  .#{$classname} {
+    align-items: $alignItemsValue;
+  }
+}

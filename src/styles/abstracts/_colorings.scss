@@ -1,15 +1,13 @@
-// @import '../constants/colors';
-
-$colors: (primary: $primary,
-  secondary: $secondary,
-  blue: $blue,
-  black: $black,
-  lightgray: $lightgray,
-  darkgray: $darkgray,
-  cyan: $cyan,
-  redishgray: $redishgray,
-  transparent: transparent,
-  white: $white);
+$colors: ('primary': $primary,
+  'secondary': $secondary,
+  'blue': $blue,
+  'black': $black,
+  'lightgray': $lightgray,
+  'darkgray': $darkgray,
+  'cyan': $cyan,
+  'redishgray': $redishgray,
+  'transparent': transparent,
+  'white': $white);
 
 @each $class,
 $color in $colors {

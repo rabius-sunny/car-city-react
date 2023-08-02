@@ -12,8 +12,11 @@ yarn.lock
 # production
 /build
 
-# misc
+# development
 .yarn/
+.vscode/
+
+# misc
 .DS_Store
 .env.local
 .env.development.local
