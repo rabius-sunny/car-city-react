@@ -1,11 +1,6 @@
-import {
-  Button,
-  ColorScheme,
-  ColorSchemeProvider,
-} from '@mantine/core'
+import { ColorScheme, ColorSchemeProvider } from '@mantine/core'
+import Appbar from 'components/shared/Appbar'
 import { useState } from 'react'
-import { IconHeart } from '@tabler/icons-react'
-import AppContainer from 'components/custom/AppContainer'
 
 function App() {
   const [colorScheme, setColorScheme] = useState<ColorScheme>('light')
@@ -17,11 +12,7 @@ function App() {
       colorScheme={colorScheme}
       toggleColorScheme={toggleColorScheme}
     >
-      <AppContainer>
-        <Button onClick={() => toggleColorScheme()}>
-          <IconHeart />
-        </Button>
-      </AppContainer>
+      <Appbar />
     </ColorSchemeProvider>
   )
 }

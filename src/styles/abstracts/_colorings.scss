@@ -1,5 +1,7 @@
-$colors: ('primary': $primary,
+$colors: (
+  'primary': $primary,
   'secondary': $secondary,
+  'red': $red,
   'blue': $blue,
   'black': $black,
   'lightgray': $lightgray,
@@ -7,10 +9,10 @@ $colors: ('primary': $primary,
   'cyan': $cyan,
   'redishgray': $redishgray,
   'transparent': transparent,
-  'white': $white);
+  'white': $white
+);
 
-@each $class,
-$color in $colors {
+@each $class, $color in $colors {
   .text-#{$class} {
     color: $color;
   }

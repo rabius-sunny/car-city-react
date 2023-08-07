@@ -10,8 +10,8 @@ const themeConfig = {
     Container: {
       defaultProps: {
         sizes: {
-          xs: 540,
-          sm: 720,
+          xs: 500,
+          sm: 667,
           md: 1200,
           lg: 1340,
           xl: 1620

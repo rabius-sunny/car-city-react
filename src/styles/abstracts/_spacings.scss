@@ -1,5 +1,6 @@
 // Padding
-$spacing-properties: (p: padding,
+$spacing-properties: (
+  p: padding,
   pt: padding-top,
   pb: padding-bottom,
   ps: padding-left,
@@ -8,11 +9,15 @@ $spacing-properties: (p: padding,
   mt: padding-top,
   mb: padding-bottom,
   ms: padding-left,
-  me: padding-right);
+  me: padding-right,
+  gap: gap,
+  h: height,
+  w: width,
+  line: line-height
+);
 
-@each $key,
-$value in $spacing-properties {
-  @for $i from 1 through 10 {
+@each $key, $value in $spacing-properties {
+  @for $i from 1 through 15 {
     $spacing-value: $i * 10px;
 
     .#{$key}-#{$i} {

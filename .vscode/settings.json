@@ -1,8 +1,15 @@
 {
-  "search.exclude": {
-    "**/.yarn": true,
-    "**/.pnp.*": true
-  },
-  "typescript.tsdk": ".yarn/sdks/typescript/lib",
-  "typescript.enablePromptUseWorkspaceTsdk": true
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "prettier.jsxSingleQuote": true,
+  "prettier.requireConfig": false,
+  "prettier.configPath": ".prettierrc.js",
+  "prettier.trailingComma": "none",
+  "prettier.useEditorConfig": true,
+  "prettier.withNodeModules": false,
+  "prettier.singleQuote": true,
+  "prettier.singleAttributePerLine": true,
+  "prettier.enable": true,
+  "prettier.resolveGlobalModules": true,
+  "prettier.prettierPath": "",
+  "prettier.semi": false
 }

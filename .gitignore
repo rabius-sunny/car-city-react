@@ -13,8 +13,8 @@ yarn.lock
 /build
 
 # development
-.yarn/
-.vscode/
+/.yarn
+/.vscode
 
 # misc
 .DS_Store
