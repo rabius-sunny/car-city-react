@@ -1,0 +1,6 @@
+.carousel {
+  padding: 0 2rem;
+  @media (max-width: 767px) {
+    padding: 0;
+  }
+}

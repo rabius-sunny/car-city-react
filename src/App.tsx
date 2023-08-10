@@ -1,5 +1,8 @@
 import { ColorScheme, ColorSchemeProvider } from '@mantine/core'
-import Appbar from 'components/shared/Appbar'
+import Categories from 'components/home/Categories'
+import Features from 'components/home/Features'
+import FullCarousel from 'components/home/FullCarousel'
+import ProductBrands from 'components/home/ProductBrands'
 import { useState } from 'react'
 
 function App() {
@@ -12,7 +15,10 @@ function App() {
       colorScheme={colorScheme}
       toggleColorScheme={toggleColorScheme}
     >
-      <Appbar />
+      <FullCarousel />
+      <Features />
+      <Categories />
+      <ProductBrands />
     </ColorSchemeProvider>
   )
 }

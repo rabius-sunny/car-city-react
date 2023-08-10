@@ -11,14 +11,21 @@ const useStyles = createStyles(() => ({
 
 export default function AppContainer({
   bgColor,
+  className,
   children
 }: {
   bgColor?: string
+  className?: string
   children: React.ReactNode
 }) {
   const { classes } = useStyles()
   return (
-    <div style={{ backgroundColor: bgColor }}>
+    <div
+      className={className}
+      style={{
+        backgroundColor: bgColor
+      }}
+    >
       <Container className={classes.container}>{children}</Container>
     </div>
   )

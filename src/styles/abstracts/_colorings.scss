@@ -9,7 +9,8 @@ $colors: (
   'cyan': $cyan,
   'redishgray': $redishgray,
   'transparent': transparent,
-  'white': $white
+  'white': $white,
+  'darktext': $darktext
 );
 
 @each $class, $color in $colors {

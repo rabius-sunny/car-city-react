@@ -13,12 +13,14 @@ $spacing-properties: (
   gap: gap,
   h: height,
   w: width,
-  line: line-height
+  line: line-height,
+  fs: font-size,
+  rounded: border-radius
 );
 
 @each $key, $value in $spacing-properties {
   @for $i from 1 through 15 {
-    $spacing-value: $i * 10px;
+    $spacing-value: $i * 5px;
 
     .#{$key}-#{$i} {
       #{$value}: $spacing-value;
