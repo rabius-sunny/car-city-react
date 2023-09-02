@@ -17,7 +17,11 @@ module.exports = {
   plugins: ['@typescript-eslint', 'jsx-a11y', 'prettier', 'react-hooks'],
   rules: {
     'react/react-in-jsx-scope': 'off',
-    semi: 'off'
+    semi: 'off',
+    'no-extra-semi': 'warn',
+    'no-multi-spaces': 'warn',
+    'block-spacing': 'warn',
+    'comma-spacing': 'warn'
   },
   settings: {
     react: {

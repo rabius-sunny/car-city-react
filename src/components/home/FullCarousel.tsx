@@ -25,17 +25,17 @@ export default function FullCarousel() {
       >
         <img
           style={{ width: '100%', height: '100%' }}
-          src='/images/slide1.jpg'
+          src='/images/slides/slide1.jpg'
           alt='Slide 1'
         />
         <img
           style={{ width: '100%', height: '100%' }}
-          src='/images/slide2.jpg'
+          src='/images/slides/slide2.jpg'
           alt='Slide 2'
         />
         <img
           style={{ width: '100%', height: '100%' }}
-          src='/images/slide3.jpg'
+          src='/images/slides/slide3.jpg'
           alt='Slide 3'
         />
       </Carousel>
