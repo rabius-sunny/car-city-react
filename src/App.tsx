@@ -1,9 +1,13 @@
 import { ColorScheme, ColorSchemeProvider } from '@mantine/core'
 import Categories from 'components/home/Categories'
+import Contact from 'components/home/Contact'
 import Deal from 'components/home/Deal'
+import { Faq } from 'components/home/Faq'
 import Features from 'components/home/Features'
 import FullCarousel from 'components/home/FullCarousel'
+import NewArrivals from 'components/home/NewArrivals'
 import ProductBrands from 'components/home/ProductBrands'
+import Subscribe from 'components/home/Subscribe'
 import Products from 'components/products/Products'
 import { useState } from 'react'
 
@@ -23,7 +27,10 @@ function App() {
       <Products title='top sale in the week' header='best seller' />
       <ProductBrands />
       <Deal />
-      <Products title='top sale in the week' header='new arrivals' />
+      <NewArrivals />
+      <Faq />
+      <Contact />
+      <Subscribe />
     </ColorSchemeProvider>
   )
 }
