@@ -1,4 +1,5 @@
 import { ColorScheme, ColorSchemeProvider } from '@mantine/core'
+import Blog from 'components/home/Blog'
 import Categories from 'components/home/Categories'
 import Contact from 'components/home/Contact'
 import Deal from 'components/home/Deal'
@@ -28,6 +29,7 @@ function App() {
       <ProductBrands />
       <Deal />
       <NewArrivals />
+      <Blog />
       <Faq />
       <Contact />
       <Subscribe />
