@@ -1,5 +1,14 @@
-import { Button, TextInput } from '@mantine/core'
-import { IconHeart, IconSearch, IconShoppingCart } from '@tabler/icons-react'
+import { Button, Select, TextInput } from '@mantine/core'
+import {
+  IconBrandFacebook,
+  IconBrandInstagram,
+  IconBrandLinkedin,
+  IconBrandTwitter,
+  IconBrandYoutube,
+  IconHeart,
+  IconSearch,
+  IconShoppingCart
+} from '@tabler/icons-react'
 import AppContainer from 'components/custom/AppContainer'
 
 export default function Appbar({ dark }: { dark?: boolean }) {
@@ -14,18 +23,27 @@ export default function Appbar({ dark }: { dark?: boolean }) {
           >
             <div className='items-center justify-between gap-6'>
               <div className='items-center gap-2'>
-                <p>logo</p>
-                <p>logo</p>
-                <p>logo</p>
-                <p>logo</p>
-              </div>
-              <div>
-                <p>$ US DOLLOR</p>
+                <IconBrandFacebook />
+                <IconBrandTwitter />
+                <IconBrandYoutube />
+                <IconBrandInstagram />
+                <IconBrandLinkedin />
               </div>
             </div>
-            <div className='items-center'>
-              <p>LOGIN / </p>
-              <p> REGISTER</p>
+            <div className='items-center gap-2'>
+              <div>
+                <Select
+                  variant='filled'
+                  defaultValue='usd'
+                  styles={{ root: { backgroundColor: 'red' } }}
+                  data={[
+                    { value: 'usd', label: '$USD' },
+                    { value: 'euro', label: 'EURO' },
+                    { value: 'bdt', label: 'BDT' }
+                  ]}
+                />
+              </div>
+              <p>LOGIN/REGISTER</p>
             </div>
           </div>
           <div className='items-center justify-between gap-10 h-15'>
