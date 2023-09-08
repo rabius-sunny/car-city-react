@@ -1,5 +1,3 @@
-module.exports = {
-  rules: {
-    'no-unused-vars': 'off'
-  }
-}
+export const rules = {
+  'no-unused-vars': 'off'
+};
