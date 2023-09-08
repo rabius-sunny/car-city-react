@@ -19,6 +19,3 @@ export interface ICartItem {
 export interface IAllCartItems {
   items: ICartItem[]
 }
-export interface RootState {
-  cart: IAllCartItems
-}

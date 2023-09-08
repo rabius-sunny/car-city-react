@@ -3,16 +3,18 @@ import { persistStore, persistReducer } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
 import authSlice from './authSlice'
 import cartSlice from './cartSlice'
+import utilSlice from './utilSlice'
 
 const rootReducer = combineReducers({
   auth: authSlice,
-  cart: cartSlice
+  cart: cartSlice,
+  util: utilSlice
 })
 
 const persistConfig = {
   key: 'root',
   storage,
-  whitelist: ['auth', 'cart']
+  whitelist: ['auth', 'cart', 'util']
 }
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)

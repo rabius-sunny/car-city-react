@@ -1,17 +1,12 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import requests from 'services/http'
-
-interface userState {
-  stoken?: string
-  utoken?: string
-  authLoading?: 'pending' | 'error' | 'idle'
-}
+import { authState } from 'types/AuthTypes'
 
 const initialState = {
   stoken: '',
   utoken: '',
   authLoading: 'idle'
-} as userState
+} as authState
 
 export const signupSeller = createAsyncThunk(
   'seller/signup',

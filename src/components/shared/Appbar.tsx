@@ -10,6 +10,7 @@ import {
   IconShoppingCart
 } from '@tabler/icons-react'
 import AppContainer from 'components/custom/AppContainer'
+import { Link } from 'react-router-dom'
 
 export default function Appbar({ dark }: { dark?: boolean }) {
   return (
@@ -43,7 +44,9 @@ export default function Appbar({ dark }: { dark?: boolean }) {
                   ]}
                 />
               </div>
-              <p>LOGIN/REGISTER</p>
+              <Link className='text-white' to='/login/user'>
+                LOGIN/REGISTER
+              </Link>
             </div>
           </div>
           <div className='items-center justify-between gap-10 h-15'>
