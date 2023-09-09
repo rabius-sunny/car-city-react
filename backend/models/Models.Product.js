@@ -11,9 +11,9 @@ const productSchema = new Schema(
       type: Number,
       required: true
     },
-    available: {
-      type: Boolean,
-      default: true
+    stock: {
+      type: Number,
+      required: true
     },
     category: {
       type: String,
@@ -64,7 +64,13 @@ const productSchema = new Schema(
       type: String,
       enum: ['new', 'recondition'],
       default: 'new'
-    }
+    },
+    reviews: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'review'
+      }
+    ]
   },
   { timestamps: true }
 )

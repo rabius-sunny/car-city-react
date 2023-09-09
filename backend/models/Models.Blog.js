@@ -1,7 +1,7 @@
 import mongoose from 'mongoose'
 const { Schema, model } = mongoose
 
-const productSchema = new Schema(
+const blogSchema = new Schema(
   {
     title: {
       type: String,
@@ -15,12 +15,14 @@ const productSchema = new Schema(
       type: String,
       required: true
     },
-    price: {
-      type: Number,
-      required: true
-    }
+    comments: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'blogcomment'
+      }
+    ]
   },
   { timestamps: true }
 )
 
-export default model('product', productSchema)
+export default model('blog', blogSchema)

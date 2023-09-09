@@ -7,10 +7,6 @@ const userSchema = new Schema(
       type: String,
       required: true
     },
-    email: {
-      type: String,
-      required: false
-    },
     phone: {
       type: String,
       required: true
@@ -19,13 +15,29 @@ const userSchema = new Schema(
       type: String,
       required: true
     },
+    email: {
+      type: String,
+      required: false
+    },
+    state: {
+      type: String,
+      required: false
+    },
+    city: {
+      type: String,
+      required: false
+    },
+    area: {
+      type: String,
+      required: false
+    },
     address: {
       type: String,
-      required: true
+      required: false
     },
     thumbnail: {
       type: String,
-      required: true
+      required: false
     }
   },
   { timestamps: true }

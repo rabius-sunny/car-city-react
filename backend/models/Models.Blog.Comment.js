@@ -1,19 +1,19 @@
 import mongoose from 'mongoose'
 const { Schema, model } = mongoose
 
-const reviewSchema = new Schema(
+const blogCommentSchema = new Schema(
   {
     author: {
       type: Schema.Types.ObjectId,
       ref: 'user'
     },
-    review: {
+    comment: {
       type: String,
       required: true,
-      maxlength: 300
+      maxlength: 100
     }
   },
   { timestamps: true }
 )
 
-export default model('review', reviewSchema)
+export default model('blogcomment', blogCommentSchema)
