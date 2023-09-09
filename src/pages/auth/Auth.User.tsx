@@ -2,10 +2,11 @@ import {
   TextInput,
   Button,
   Box,
-  Container,
   Title,
   Space,
-  Loader
+  Loader,
+  createStyles,
+  rem
 } from '@mantine/core'
 import { useForm } from '@mantine/form'
 import { showNotification } from '@mantine/notifications'
@@ -25,7 +26,34 @@ import {
 } from 'features/states/authSlice'
 import { removeFrom } from 'features/states/utilSlice'
 
+const useStyles = createStyles((theme) => ({
+  wrapper: {
+    backgroundSize: 'cover',
+    height: '100vh',
+    backgroundImage:
+      'url(https://images.unsplash.com/photo-1484242857719-4b9144542727?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1280&q=80)'
+  },
+  form: {
+    minHeight: '100vh',
+    maxWidth: rem(450),
+    background: 'white',
+    padding: '5rem 1rem 2rem 1rem',
+    overflowY: 'scroll',
+
+    [theme.fn.smallerThan(992)]: {
+      maxWidth: '100%'
+    }
+  },
+  box: {
+    [theme.fn.smallerThan(992)]: {
+      maxWidth: rem(400),
+      margin: 'auto'
+    }
+  }
+}))
+
 export default function AuthUser() {
+  const { classes } = useStyles()
   const navigate = useNavigate()
   const [isLogin, setIsLogin] = useState(true)
   const dispatch = useAppDispatch()
@@ -103,8 +131,8 @@ export default function AuthUser() {
   }, [state.auth.authLoading])
 
   return (
-    <Container size='sm'>
-      <div className='border-2 py-12 px-4 mt-8 rounded-lg'>
+    <div className={classes.wrapper}>
+      <div className={classes.form}>
         {isLogin ? (
           <Title order={1} mb={20} align='center' color='blue'>
             Sign in User
@@ -115,7 +143,7 @@ export default function AuthUser() {
           </Title>
         )}
         {isLogin ? (
-          <Box sx={{ maxWidth: 300 }} mx='auto'>
+          <Box className={classes.box}>
             <form
               onSubmit={signinForm.onSubmit((values) => handleLogin(values))}
             >
@@ -166,7 +194,7 @@ export default function AuthUser() {
             </div>
           </Box>
         ) : (
-          <Box sx={{ maxWidth: 300 }} mx='auto'>
+          <Box className={classes.box}>
             <form
               onSubmit={signupForm.onSubmit((values) => handleSignup(values))}
             >
@@ -242,6 +270,6 @@ export default function AuthUser() {
           </Box>
         )}
       </div>
-    </Container>
+    </div>
   )
 }

@@ -2,7 +2,7 @@ import { lazy } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 const Home = lazy(() => import('pages/Home'))
-const AuthSeller = lazy(() => import('pages/auth/Auth.Seller'))
+const AuthAdmin = lazy(() => import('pages/auth/Auth.Admin'))
 const AuthUser = lazy(() => import('pages/auth/Auth.User'))
 
 export default function RouteList() {
@@ -11,7 +11,7 @@ export default function RouteList() {
       <Routes>
         <Route path='/' index element={<Home />} />
         <Route path='/login/user' index element={<AuthUser />} />
-        <Route path='/login/seller' index element={<AuthSeller />} />
+        <Route path='/login/admin' index element={<AuthAdmin />} />
       </Routes>
     </BrowserRouter>
   )

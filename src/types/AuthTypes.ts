@@ -1,5 +1,5 @@
 export interface authState {
-  stoken?: string
+  atoken?: string
   utoken?: string
   authLoading?: 'pending' | 'error' | 'idle'
 }
