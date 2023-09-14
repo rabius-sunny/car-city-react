@@ -13,7 +13,7 @@ import { showNotification } from '@mantine/notifications'
 import { useAppDispatch, useAppSelector } from 'hooks/redux'
 import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { resetAuthLoading, signinAdmin } from 'features/states/authSlice'
+import { resetAuthStatus, signinAdmin } from 'features/states/authSlice'
 
 export default function AuthAdmin() {
   const navigate = useNavigate()
@@ -38,12 +38,12 @@ export default function AuthAdmin() {
   const handleLogin = (values: loginData) => dispatch(signinAdmin(values))
 
   useEffect(() => {
-    dispatch(resetAuthLoading())
+    dispatch(resetAuthStatus())
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   useEffect(() => {
-    state.auth.authLoading === 'error' &&
+    state.auth.authStatus === 'error' &&
       showNotification({
         id: 'hello-there',
         autoClose: 5000,
@@ -57,7 +57,7 @@ export default function AuthAdmin() {
       })
     state.auth.atoken && navigate('/dashboard/supplier')
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [state.auth.authLoading])
+  }, [state.auth.authStatus])
 
   return (
     <Container size='sm'>
@@ -83,7 +83,7 @@ export default function AuthAdmin() {
             />
 
             <Button mt={20} type='submit'>
-              {state.auth.authLoading === 'pending' ? (
+              {state.auth.authStatus === 'pending' ? (
                 <Loader size='xs' color='white' />
               ) : (
                 'Log in'

@@ -20,7 +20,7 @@ import { useAppDispatch, useAppSelector } from 'hooks/redux'
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import {
-  resetAuthLoading,
+  resetAuthStatus,
   signinUser,
   signupUser
 } from 'features/states/authSlice'
@@ -104,12 +104,12 @@ export default function AuthUser() {
   const handleSignup = (values: formData) => dispatch(signupUser(values))
 
   useEffect(() => {
-    dispatch(resetAuthLoading())
+    dispatch(resetAuthStatus())
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   useEffect(() => {
-    state.auth.authLoading === 'error' &&
+    state.auth.authStatus === 'error' &&
       showNotification({
         id: 'hello-there',
         autoClose: 5000,
@@ -128,7 +128,7 @@ export default function AuthUser() {
       navigate('/')
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [state.auth.authLoading])
+  }, [state.auth.authStatus])
 
   return (
     <div className={classes.wrapper}>
@@ -162,7 +162,7 @@ export default function AuthUser() {
               />
 
               <Button mt={20} type='submit'>
-                {state.auth.authLoading === 'pending' ? (
+                {state.auth.authStatus === 'pending' ? (
                   <Loader size='xs' color='white' />
                 ) : (
                   'Log in'
@@ -237,7 +237,7 @@ export default function AuthUser() {
               />
 
               <Button mt={20} type='submit'>
-                {state.auth.authLoading === 'pending' ? (
+                {state.auth.authStatus === 'pending' ? (
                   <Loader size='xs' color='white' />
                 ) : (
                   'Sign up'

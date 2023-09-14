@@ -5,7 +5,7 @@ import { authState } from 'types/AuthTypes'
 const initialState = {
   atoken: '',
   utoken: '',
-  authLoading: 'idle'
+  authStatus: 'idle'
 } as authState
 
 export const signupUser = createAsyncThunk(
@@ -39,46 +39,46 @@ const authSlice = createSlice({
       delete state?.utoken
       window.location.reload()
     },
-    resetAuthLoading(state) {
-      state.authLoading = 'idle'
+    resetAuthStatus(state) {
+      state.authStatus = 'idle'
     }
   },
   extraReducers(builder) {
     // Admin Sign in
     builder.addCase(signinAdmin.fulfilled, (state, action) => {
       state.atoken = action.payload.token
-      state.authLoading = 'idle'
+      state.authStatus = 'idle'
     }),
       builder.addCase(signinAdmin.pending, (state) => {
-        state.authLoading = 'pending'
+        state.authStatus = 'pending'
       }),
       builder.addCase(signinAdmin.rejected, (state) => {
-        state.authLoading = 'error'
+        state.authStatus = 'error'
       }),
       // User Sign in
       builder.addCase(signinUser.fulfilled, (state, action) => {
         state.utoken = action.payload.token
-        state.authLoading = 'idle'
+        state.authStatus = 'idle'
       }),
       builder.addCase(signinUser.pending, (state) => {
-        state.authLoading = 'pending'
+        state.authStatus = 'pending'
       }),
       builder.addCase(signinUser.rejected, (state) => {
-        state.authLoading = 'error'
+        state.authStatus = 'error'
       }),
       // User Sign up
       builder.addCase(signupUser.fulfilled, (state, action) => {
         state.utoken = action.payload.token
-        state.authLoading = 'idle'
+        state.authStatus = 'idle'
       }),
       builder.addCase(signupUser.pending, (state) => {
-        state.authLoading = 'pending'
+        state.authStatus = 'pending'
       }),
       builder.addCase(signupUser.rejected, (state) => {
-        state.authLoading = 'error'
+        state.authStatus = 'error'
       })
   }
 })
 
-export const { logout, resetAuthLoading } = authSlice.actions
+export const { logout, resetAuthStatus } = authSlice.actions
 export default authSlice.reducer
