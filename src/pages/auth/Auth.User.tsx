@@ -6,16 +6,12 @@ import {
   Space,
   Loader,
   createStyles,
-  rem
+  rem,
+  Badge
 } from '@mantine/core'
 import { useForm } from '@mantine/form'
 import { showNotification } from '@mantine/notifications'
-import {
-  IconAlertOctagon,
-  IconTrademark,
-  IconUser,
-  IconUserCircle
-} from '@tabler/icons-react'
+import { IconAlertOctagon, IconUserCircle } from '@tabler/icons-react'
 import { useAppDispatch, useAppSelector } from 'hooks/redux'
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
@@ -28,13 +24,13 @@ import { removeFrom } from 'features/states/utilSlice'
 
 const useStyles = createStyles((theme) => ({
   wrapper: {
-    backgroundSize: 'cover',
     height: '100vh',
+    backgroundSize: 'cover',
     backgroundImage:
       'url(https://images.unsplash.com/photo-1484242857719-4b9144542727?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1280&q=80)'
   },
   form: {
-    minHeight: '100vh',
+    height: '100vh',
     maxWidth: rem(450),
     background: 'white',
     padding: '5rem 1rem 2rem 1rem',
@@ -58,11 +54,10 @@ export default function AuthUser() {
   const [isLogin, setIsLogin] = useState(true)
   const dispatch = useAppDispatch()
   const state = useAppSelector((state) => state)
-  interface formData {
+  interface signupData {
     name: string
     email: string
     phone: string
-    phone2: string
     address: string
   }
   interface loginData {
@@ -101,7 +96,7 @@ export default function AuthUser() {
     }
   })
   const handleLogin = (values: loginData) => dispatch(signinUser(values))
-  const handleSignup = (values: formData) => dispatch(signupUser(values))
+  const handleSignup = (values: signupData) => dispatch(signupUser(values))
 
   useEffect(() => {
     dispatch(resetAuthStatus())
@@ -134,11 +129,11 @@ export default function AuthUser() {
     <div className={classes.wrapper}>
       <div className={classes.form}>
         {isLogin ? (
-          <Title order={1} mb={20} align='center' color='blue'>
+          <Title order={1} mb={20} align='center' color='red'>
             Sign in User
           </Title>
         ) : (
-          <Title order={1} mb={20} align='center' color='blue'>
+          <Title order={1} mb={20} align='center' color='red'>
             Sign up User
           </Title>
         )}
@@ -150,6 +145,7 @@ export default function AuthUser() {
               <TextInput
                 withAsterisk
                 label='Email'
+                placeholder='you@email.com'
                 {...signinForm.getInputProps('email')}
               />
               <Space h='lg' />
@@ -169,28 +165,21 @@ export default function AuthUser() {
                 )}
               </Button>
             </form>
-            <div className='flex mt-6 items-center justify-center'>
-              <div className='bg-gray-600 h-[1px] w-24 mr-1'></div>
-              or
-              <div className='bg-gray-600 h-[1px] w-24 ml-1'></div>
-            </div>
-            <div className='mt-8 flex justify-center'>
-              <button
+            <div className='mt-8 text-center'>
+              <Badge
+                component='button'
                 onClick={() => setIsLogin(false)}
-                className='text-primary bg-lite hover:bg-indigo-200 text-lg flex items-center justify-center gap-4 rounded-3xl p-2 pr-3'
+                leftSection={<IconUserCircle />}
+                styles={{
+                  root: { cursor: 'pointer' },
+                  leftSection: { height: '80%' }
+                }}
+                color='red'
+                size='xl'
+                radius='sm'
               >
-                <IconUserCircle />
-                <span>Create an account</span>
-              </button>
-            </div>
-            <div className='mt-4 flex justify-center'>
-              <button
-                onClick={() => navigate('/login/seller')}
-                className='text-primary bg-lite hover:bg-indigo-200 text-lg flex items-center justify-center gap-4 rounded-3xl p-2 pr-3'
-              >
-                <IconTrademark />
-                <span>Are you a Seller?</span>
-              </button>
+                Hey! New here? Sign Up
+              </Badge>
             </div>
           </Box>
         ) : (
@@ -200,7 +189,7 @@ export default function AuthUser() {
             >
               <TextInput
                 withAsterisk
-                label='Company Name'
+                label='Your Name'
                 {...signupForm.getInputProps('name')}
               />
               <Space h='lg' />
@@ -225,12 +214,6 @@ export default function AuthUser() {
               <Space h='lg' />
               <TextInput
                 withAsterisk
-                label='Add. Phone no.'
-                {...signupForm.getInputProps('phone2')}
-              />
-              <Space h='lg' />
-              <TextInput
-                withAsterisk
                 label='Location'
                 placeholder='street, zip, state, country'
                 {...signupForm.getInputProps('address')}
@@ -250,22 +233,20 @@ export default function AuthUser() {
               <div className='bg-gray-600 h-[1px] w-24 ml-1'></div>
             </div>
             <div className='mt-8 flex justify-center'>
-              <button
+              <Badge
+                component='button'
                 onClick={() => setIsLogin(true)}
-                className='text-primary bg-lite hover:bg-indigo-200 text-lg flex items-center justify-center gap-4 rounded-3xl p-2 pr-3'
+                leftSection={<IconUserCircle />}
+                styles={{
+                  root: { cursor: 'pointer' },
+                  leftSection: { height: '80%' }
+                }}
+                color='red'
+                size='xl'
+                radius='sm'
               >
-                <IconUser />
-                <span>Login to yours</span>
-              </button>
-            </div>
-            <div className='mt-4 flex justify-center'>
-              <button
-                onClick={() => navigate('/login/supplier')}
-                className='text-primary bg-lite hover:bg-indigo-200 text-lg flex items-center justify-center gap-4 rounded-3xl p-2 pr-3'
-              >
-                <IconTrademark />
-                <span>Are you a supplier?</span>
-              </button>
+                Login to yours
+              </Badge>
             </div>
           </Box>
         )}
